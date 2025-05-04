@@ -30,6 +30,15 @@ public class LibraryTest {
     }
 
     @Test
+    public void testGetBooks() {
+        List<Book> books = library.getBooks();
+        assertEquals(3, books.size());
+        assertEquals("The Great Gatsby", books.get(0).getTitle());
+        assertEquals("1984", books.get(1).getTitle());
+        assertEquals("To Kill a Mockingbird", books.get(2).getTitle());
+    }
+
+    @Test
     public void testSortBooksByTitle() {
         List<Book> sortedBooks = library.sortBooksByTitle();
         assertEquals("1984", sortedBooks.get(0).getTitle());
